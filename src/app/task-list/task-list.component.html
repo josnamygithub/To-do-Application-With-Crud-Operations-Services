@@ -1,0 +1,47 @@
+<!-- src/app/task-list/task-list.component.html -->
+<!-- <ul>
+  <li *ngFor="let task of tasks">
+    {{ task.name }} ({{ task.status }})
+    <button (click)="updateTask(task)">Update</button>
+    <button (click)="deleteTask(task.id)">Delete</button>
+  </li>
+</ul> -->
+
+<!-- <ul>
+  <li *ngFor="let task of tasks">
+    <span>{{ task.name }}</span>  (Status: {{ task.status }})  <button (click)="updateTask(task)">Update</button>
+    <button (click)="deleteTask(task.id)">Delete</button>
+    <input type="text" [(ngModel)]="task.name" name="name">  </li>
+</ul> -->
+<!-- <ul class="list-group">
+  <li *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between align-items-center">
+    <input type="text" [(ngModel)]="task.name" name="taskName{{ task.id }}" class="form-control">  (Status: {{ task.status }})
+    <select [(ngModel)]="task.status" name="taskStatus{{ task.id }}" class="form-select">
+      <option value="pending">Pending</option>
+      <option value="in progress">In Progress</option>
+      <option value="completed">Completed</option>
+    </select>
+    <button (click)="updateTask(task)" class="btn btn-primary btn-sm">Update</button>
+  </li>
+</ul> -->
+<ul class="list-group">
+  <li *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between align-items-center">
+    <div class="col">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="task.name" name="taskName{{ task.id }}" class="form-control" placeholder="Task Name">
+      </div>
+    </div>
+    <div class="col-auto">
+      <select [(ngModel)]="task.status" name="taskStatus{{ task.id }}" class="form-select mt-1">
+        <option value="pending">Pending</option>
+        <option value="in progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <button (click)="updateTask(task)" class="btn btn-primary btn-sm me-1">Update</button>
+      <button (click)="deleteTask(task.id)" class="btn btn-danger btn-sm">Delete</button>
+    </div>
+  </li>
+</ul>
+

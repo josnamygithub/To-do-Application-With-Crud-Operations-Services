@@ -1,0 +1,37 @@
+<!-- src/app/task-form/task-form.component.html -->
+<!-- <form (submit)="addTask()">
+  <input [(ngModel)]="task.name" placeholder="Task Name">
+   <button type="submit">Add Task</button>
+</form> --> 
+<form #form="ngForm" (ngSubmit)="form.valid && addTask()">
+  <div class="row">
+    <!-- <div class="col-md-6">
+      <input [(ngModel)]="task.name" name="taskName" placeholder="Task Name" class="form-control" required #TaskName>
+      <label class="text-danger" >required</label>
+    </div> --> 
+    <div class="col-md-6">
+      <input [(ngModel)]="task.name" name="taskName" placeholder="Task Name" class="form-control" #TaskName="ngModel" required>
+      <label class="text-danger" *ngIf="TaskName.invalid && (TaskName.dirty || TaskName.touched)">required</label>
+    </div>
+    <div class="col-md-6">
+      <textarea [(ngModel)]="task.description" name="taskDescription" placeholder="Description" class="form-control" ></textarea>
+    </div>
+    <div class="col-md-4">
+      <select [(ngModel)]="task.status" name="taskStatus" class="form-control" required>
+        <option value="pending">Pending</option>
+        <option value="in progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <select [(ngModel)]="task.priority" name="taskPriority" class="form-control" required>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-primary">Add Task</button>
+    </div>
+  </div>
+</form>

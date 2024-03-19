@@ -1,0 +1,20 @@
+/* Customize styling as needed (optional) */
+.list-group-item {
+  margin-bottom: 10px; /* Adjust the spacing between list items */
+}
+
+.input-group {
+  width: 100%; /* Ensure the input field fills its container */
+}
+
+.col {
+  flex: 1; /* Make the columns flexible to distribute space evenly */
+}
+
+.col-auto {
+  flex: 0 0 auto; /* Make the columns non-flexible to avoid resizing */
+}
+
+.btn {
+  margin-top: 5px; /* Adjust the top margin of the buttons */
+}
